@@ -18,7 +18,7 @@ function login() {
   
     form.append(inputEmail, inputPass, buttonLogin);
     section.append(title, form, buttonReturn);
-  
+   
     return section;
   }
   

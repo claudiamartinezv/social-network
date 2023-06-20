@@ -1,3 +1,5 @@
+import { login } from "./lib/function";
+
 // file home.js
 function home(navigateTo) {
     //Crear elementos
@@ -17,7 +19,11 @@ function home(navigateTo) {
 
     //Btn home
     button.textContent = 'Iniciar sesión';
-    button.setAttribute = ('id', 'btn-home')
+    button.setAttribute = ('id', 'btn-home');
+    button.addEventListener('click', ()=> {
+      console.log("hola");
+      login();
+    });
 
     section.append(divImg, button);
     return section;
