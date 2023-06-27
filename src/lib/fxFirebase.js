@@ -11,6 +11,7 @@ export const login = ()=> signInWithPopup(auth, provider)
     const user = result.user;
     // IdP data available using getAdditionalUserInfo(result)
     // ...
+    return true;
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
@@ -20,4 +21,5 @@ export const login = ()=> signInWithPopup(auth, provider)
     // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
+    return false;
   });
