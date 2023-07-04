@@ -1,6 +1,6 @@
 import { login } from "./lib/fxFirebase";
 
-// file home.js
+// File home.js
 function home(navigateTo) {
     //Crear elementos
     const section = document.createElement('section');
@@ -20,14 +20,12 @@ function home(navigateTo) {
     //Btn google
     btnGoogle.textContent = 'Iniciar sesión con Google';
     btnGoogle.setAttribute('id', 'btnGoogle');
-    btnGoogle.addEventListener('click', ()=> {
-      login().then(()=> navigateTo('/wall'))
-      .catch(()=> navigateTo('/'));
-    
+    btnGoogle.addEventListener('click', ()=>{
+      login().then(()=>navigateTo('/wall')).catch(()=>navigateTo('/'));
     });
 
     section.append(divImg, btnGoogle);
     return section;
   }
   
-  export default home;
+export default home;

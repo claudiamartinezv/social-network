@@ -1,13 +1,12 @@
 import home from './home.js';
-import login from './login.js';
-import error from './error.js';
 import wall from './wall.js';
+import error from './error.js';
+
 
 const routes = [
   { path: '/', component: home },
-  { path: '/login', component: login },
-  { path: '/error', component: error },
   { path: '/wall', component: wall },
+  { path: '/error', component: error },
 ];
 
 const defaultRoute = '/';
@@ -35,8 +34,5 @@ function navigateTo(hash) {
 window.onpopstate = () => {
   navigateTo(window.location.pathname);
 };
-// verificar si el ususario esta guardado en el localStorage
-// si el usuario esta logueado deberia poder ir a cualquier pagina
-// si el usuario no esta logeado deberia llevarlo al defaultRoute
-// obtener del localStorage el token del usuario
+
 navigateTo(window.location.pathname || defaultRoute);

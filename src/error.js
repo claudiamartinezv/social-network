@@ -5,4 +5,4 @@ function error() {
     return title;
   }
   
-  export default error;
+export default error;
