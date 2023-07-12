@@ -12,7 +12,7 @@
 * [6. Autor](#6-Autor)
 * [7. Skills](#7-Skills)
 
-# Resumen del Proyecto
+## 1.Resumen del Proyecto
 
 Viajerapp es una Single-page Application (SPA) desarrollada en Firebase. Es una red social para viajeras que les permite crear comunidad, conectarse y compartir información sobre viajes, alojamientos, panoramas, tips, entre otros.
 Las principales funcionalidades incluyen: inicio de sesión automático con Google, publicación de información sobre viajes y eliminación de publicaciones existentes.
