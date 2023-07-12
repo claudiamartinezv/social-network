@@ -1,4 +1,4 @@
-## Viajerapp Social Network
+# Viajerapp Social Network
 
 ![](./src/img/logo.png)
 
