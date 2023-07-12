@@ -1,6 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+  deleteDoc,
+  doc,
+  onSnapshot,
+  query,
+} from 'firebase/firestore';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,4 +29,33 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
+//firestore
+const eventsCollection = (publicaciones) => addDoc(collection(db, 'posts'), { publicaciones });
+
+//mostar publicaciones
+const getPost = () => getDocs(collection(db, 'posts'));
+
+//borrar datos o publicaciones
+const fetchPost = query(collection(db, 'posts'));
+
+const deleteDocument = (id) => deleteDoc(doc(db, 'posts', id));
+
 export const auth = getAuth(app);
+export {
+  db,
+  collection,
+  getDocs,
+  eventsCollection,
+  getPost,
+  deleteDocument,
+  fetchPost,
+  onSnapshot,
+};
+
+
+

@@ -1,6 +1,7 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "./index.js";
 
+//LOGIN USER CON GOOGLE
 const provider = new GoogleAuthProvider();
 export const login = ()=> signInWithPopup(auth, provider)
   .then((result) => {
@@ -23,3 +24,4 @@ export const login = ()=> signInWithPopup(auth, provider)
     // ...
     return false;
   });
+  

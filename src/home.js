@@ -7,6 +7,7 @@ function home(navigateTo) {
     const divImg = document.createElement('div');
     const logo = document.createElement('img');
     const btnGoogle = document.createElement('button');
+    const footer = document.createElement('footer');
 
     //Id style home
     section.setAttribute('id', 'homeStyle');
@@ -24,7 +25,12 @@ function home(navigateTo) {
       login().then(()=>navigateTo('/wall')).catch(()=>navigateTo('/'));
     });
 
-    section.append(divImg, btnGoogle);
+    //Footer
+    footer.setAttribute('id', 'footer');
+    footer.textContent= "Creado por Claudia Martínez @claumartinezv";
+
+
+    section.append(divImg, btnGoogle, footer);
     return section;
   }
   
