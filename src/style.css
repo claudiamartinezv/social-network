@@ -111,6 +111,19 @@ body{
     background-color: darkred;
 }
 
+#bntEdit{
+    background-color: green;
+    color: #ffffff;
+    font-size: 10px;
+    padding: auto;
+    border-radius: 5px;
+    border-color: darkgreen;
+}
+
+#btnEdit:{
+
+}
+
 #inputNewPost{
     width: 85%;   
     height: 45px;

@@ -1,0 +1,7 @@
+{
+    "hosting": {
+      "coordination": {
+        "crossOriginOpenerPolicy": "same-origin"
+      }
+    }
+}
