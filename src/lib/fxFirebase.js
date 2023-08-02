@@ -11,6 +11,7 @@ export const login = ()=> signInWithPopup(auth, provider)
     // The signed-in user info.
     const user = result.user;
     // IdP data available using getAdditionalUserInfo(result)
+    localStorage.setItem('user', user.uid);
     // ...
     return true;
   }).catch((error) => {

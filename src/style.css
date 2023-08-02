@@ -65,12 +65,17 @@ body{
     display: flex;
 }
 
+.headerMsj{
+    justify-content: baseline;
+}
+
 #btnLogOut{
     background-color: #9400d3;
     color: #ffffff;
     font-size: 15px;
     border:none;
     border-radius: 10px;
+    
 }
 
 #btnLogOut:hover{
@@ -78,9 +83,7 @@ body{
     color: #9400d3;
 }
 
-.headerMsj{
-    text-align: left;
-}
+
 
 /*main Wall*/
 
@@ -111,17 +114,17 @@ body{
     background-color: darkred;
 }
 
-#bntEdit{
-    background-color: green;
+.likePublication{
+    background-color: blueviolet;
     color: #ffffff;
     font-size: 10px;
     padding: auto;
     border-radius: 5px;
-    border-color: darkgreen;
+    border-color: darkblue;
 }
 
-#btnEdit:{
-
+.likePublication:hover{
+    background-color: darkblue;
 }
 
 #inputNewPost{
