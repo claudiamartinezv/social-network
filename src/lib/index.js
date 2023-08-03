@@ -10,6 +10,7 @@ import {
   doc,
   onSnapshot,
   query,
+  setDoc,
 } from 'firebase/firestore';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -45,6 +46,8 @@ const fetchPost = query(collection(db, 'posts'));
 
 const deleteDocument = (id) => deleteDoc(doc(db, 'posts', id));
 
+const likeDocument = (id, obj) => setDoc(doc(db, 'posts', id), obj);
+
 export const auth = getAuth(app);
 export {
   db,
@@ -55,6 +58,7 @@ export {
   deleteDocument,
   fetchPost,
   onSnapshot,
+  likeDocument,
 };
 
 

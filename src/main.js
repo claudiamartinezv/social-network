@@ -1,6 +1,6 @@
 import home from './home.js';
-import wall from './wall.js';
-import error from './error.js';
+import wall from './pages/wall.js';
+import error from './pages/error.js';
 
 
 const routes = [

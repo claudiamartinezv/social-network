@@ -1,4 +1,4 @@
-import { eventsCollection, deleteDocument, fetchPost, onSnapshot } from "./lib/index";
+import { eventsCollection, deleteDocument, likeDocument, fetchPost, onSnapshot, db } from "../lib/index";
 
 function wall(navigateTo) {
 
@@ -55,21 +55,52 @@ function wall(navigateTo) {
       liPost.textContent = postData.publicaciones;
       divPost.appendChild(liPost);
 
-    //Crear boton borrar
+    //Crear botón borrar
     const btnDelete = document.createElement('button');
     btnDelete.setAttribute('class', 'deletePublication');
     btnDelete.textContent = 'Borrar';
     liPost.appendChild(btnDelete);
 
-    //borrar publicacion
+    //Borrar publicacion
     btnDelete.addEventListener('click', () => {
       const idPost = doc.id;
 
       deleteDocument(idPost);
       });
-    });
-    });
 
+    //Crear botón Likes
+    const btnLike = document.createElement('button');
+    btnLike.setAttribute('class', 'likePublication');
+    btnLike.textContent = 'Me gusta'
+    liPost.appendChild(btnLike);
+
+    //Un like por User
+    btnLike.addEventListener('click', () => {
+      const idPost = doc.id;
+      const idUser = localStorage.getItem('user');
+      const val = doc.data().likes && doc.data().likes.includes(idUser);
+      console.log(val);
+      let newArray;
+
+      if(val){
+        const newArray = doc.data().likes.filter(like => like !== idUser)
+        likeDocument(idPost, {
+          ...doc.data(),
+         // like: doc.data().like ? doc.data().like +1 : 1
+         likes: newArray
+        });
+        }
+      else{
+        likeDocument(idPost, {
+          ...doc.data(),
+         // like: doc.data().like ? doc.data().like +1 : 1
+         likes: doc.data().likes ? [...doc.data().likes, idUser] : [idUser]
+        });
+      };
+      });
+    });
+    });
+   
     //crear publicación
     btnPost.textContent = 'Publicar';
     btnPost.addEventListener('click', () => {
@@ -80,12 +111,7 @@ function wall(navigateTo) {
 
         return posts;
       });
-    });
-
-    const btnEdit = document.createElement('button');
-    btnEdit.setAttribute('id', 'btnEdit');
-    btnEdit.placeholder('Editar');
-    
+    }); 
 
     //Footer
     footer.setAttribute('id', 'footer');
